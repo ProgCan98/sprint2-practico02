@@ -49,7 +49,7 @@ insertSuperHero();
 async function updateSuperHero(nombreSuperHeroe) {
   const result = await SuperHero.updateOne(
     { nombreSuperHeroe: nombreSuperHeroe },
-    { Sset: { edad: 26 } }
+    { $set: { edad: 26 } }
   );
 }
 console.log('Resultado de la actualización:', result);
