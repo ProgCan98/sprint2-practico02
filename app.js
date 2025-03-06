@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 // Se establece una ruta entre la aplicacion y el cluster mongodb, mongoose facilita la interaccion de una manera mas segura y organizada
 mongoose
   .connect(
-    'mongodb+srv://Grupo17:grupo17@cursadanodejs.ls9ii.mongodb.net/Node-js'
+    'mongodb+srv://Grupo-17:grupo17@cursadanodejs.ls9ii.mongodb.net/Node-js'
   )
   .then(() => console.log('Conexión exitosa a MongoDB'))
   .catch((error) => console.error('Error al conectar a MongoDB:', error));
 
-// Defie un schema para los superHeroes
+// Define un schema para los superHeroes
 const superheroSchema = new mongoose.Schema(
   {
     nombreSuperHeroe: { type: String, required: true },
@@ -22,7 +22,7 @@ const superheroSchema = new mongoose.Schema(
     createdAt: { type: Date, default: Date.now },
     creador: String,
   },
-  { collection: 'Grupo-XX' }
+  { collection: 'Grupo-17' }
 );
 
 // Inserta un nuevo superHeroe
@@ -51,8 +51,8 @@ async function updateSuperHero(nombreSuperHeroe) {
     { nombreSuperHeroe: nombreSuperHeroe },
     { $set: { edad: 26 } }
   );
+  console.log('Resultado de la actualización:', result);
 }
-console.log('Resultado de la actualización:', result);
 
 updateSuperHero('Spiderman');
 
